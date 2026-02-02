@@ -2,225 +2,120 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>StockWaves – Free Trading Community</title>
+<title>Trading Learning Community</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="preconnect" href="https://img.icons8.com">
 
 <style>
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#00c6ff,#0072ff);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:15px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#061a2e,#020b18);
+    height:100vh;
 }
 
-.circle{
-    position:absolute;
-    border-radius:50%;
-    background:#fff;
-    opacity:.15;
-    animation:float 30s linear infinite;
-}
-@keyframes float{
-    0%{transform:translateY(100vh)}
-    100%{transform:translateY(-100vh)}
-}
-
-.container{
-    background:#fff;
-    max-width:720px;
-    width:100%;
-    padding:40px 25px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 12px 30px rgba(0,0,0,.3);
-    position:relative;
-    z-index:2;
-}
-
-.logo{
-    font-size:2.6rem;
-    font-weight:bold;
-    color:#0072ff;
-}
-
-h2{
-    font-size:1.35rem;
-    line-height:1.6;
-    margin:12px 0 15px;
-}
-
-.btn{
-    background:#00c6ff;
-    color:#00334d;
-    padding:18px 35px;
-    border-radius:12px;
-    font-size:1.35rem;
-    font-weight:bold;
-    text-decoration:none;
-    display:inline-block;
-    margin:15px 0 5px;
-    box-shadow:0 6px 16px rgba(0,0,0,.25);
-}
-
-.micro{
-    font-size:.9rem;
-    color:#555;
-}
-
-.timer{
-    margin-top:10px;
-    font-weight:bold;
-    color:#ff9800;
-}
-
-.features{
-    display:flex;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    margin-top:20px;
-}
-.feature-item{
-    margin:10px;
-    font-weight:bold;
-}
-.feature-item img{
-    width:40px;
-}
-
-.info-box{
-    background:#f5faff;
-    padding:15px;
-    border-radius:10px;
-    margin-top:20px;
-    font-size:.95rem;
-}
-
-.disclaimer{
-    font-size:.85rem;
-    margin-top:22px;
-    color:#333;
-}
-
+/* Popup overlay */
 .popup{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.6);
+    background:rgba(0,0,0,0.6);
     display:none;
     justify-content:center;
     align-items:center;
     z-index:999;
 }
+
+/* Popup card */
 .popup-box{
     background:#fff;
-    padding:25px;
-    border-radius:14px;
+    width:90%;
+    max-width:340px;
+    border-radius:18px;
+    padding:25px 20px;
     text-align:center;
-    max-width:300px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
 }
-.popup-box a{
-    display:block;
-    margin-top:12px;
-    background:#00c6ff;
-    padding:14px;
-    border-radius:10px;
-    color:#00334d;
+
+/* Title */
+.popup-box h2{
+    color:#1976d2;
+    margin:0 0 10px;
+}
+
+/* Text */
+.popup-box p{
+    color:#444;
+    font-size:0.95rem;
+    margin:6px 0;
+}
+
+/* Timer */
+.timer{
+    margin:15px 0;
+    font-size:1.6rem;
     font-weight:bold;
-    text-decoration:none;
+    color:#000;
 }
-.close{
+
+/* Button */
+.btn{
+    display:block;
+    background:#22c55e;
+    color:#000;
+    font-weight:bold;
+    padding:16px;
+    border-radius:12px;
+    text-decoration:none;
     margin-top:10px;
-    cursor:pointer;
-    color:#555;
+    font-size:1.1rem;
+}
+
+/* Continue text */
+.continue{
+    margin-top:10px;
+    color:#777;
+    font-size:0.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<div class="circle" style="width:90px;height:90px;left:10%;animation-duration:28s"></div>
-<div class="circle" style="width:60px;height:60px;left:55%;animation-duration:24s"></div>
-<div class="circle" style="width:110px;height:110px;left:80%;animation-duration:32s"></div>
-
-<div class="container">
-    <div class="logo">📈 StockWaves</div>
-
-    <h2>
-        Free Telegram Trading Community<br>
-        Market Learning & Research Discussion<br>
-        Nifty | Bank Nifty | Options<br>
-        <strong>Educational Purpose Only</strong>
-    </h2>
-
-    <div style="margin:18px 0;font-weight:bold;color:#0072ff">
-        🔒 Free Access • No Spam • Leave Anytime
-    </div>
-
-    <a class="btn" href="https://t.me/+r3i8oXH_xcJkYWZl" target="_blank">
-        Join Free Telegram Channel
-    </a>
-
-    <div class="timer">
-        ⏳ Access expiring in <span id="seconds">40</span> seconds
-    </div>
-
-    <div class="features">
-        <div class="feature-item">
-            <img src="https://img.icons8.com/color/48/stock.png"><br>Nifty
-        </div>
-        <div class="feature-item">
-            <img src="https://img.icons8.com/color/48/bank-building.png"><br>Bank Nifty
-        </div>
-        <div class="feature-item">
-            <img src="https://img.icons8.com/color/48/price-tag.png"><br>Options
-        </div>
-    </div>
-
-    <div class="info-box">
-        <strong>Who should join?</strong><br>
-        ✔ Beginners & learners<br>
-        ✔ People interested in market education<br>
-        ⚠️ Market involves risk
-    </div>
-
-    <div class="disclaimer">
-        ⚠️ Disclaimer:<br>
-        This content is for educational purposes only.<br>
-        No investment advice.<br>
-        Market investments are subject to risk.
-    </div>
-</div>
-
+<!-- Popup -->
 <div class="popup" id="popup">
     <div class="popup-box">
-        <h3>Limited Free Access</h3>
-        <p>Join our free Telegram learning community</p>
-        <a href="https://t.me/+r3i8oXH_xcJkYWZl" target="_blank">Join Now</a>
-        <div class="close" onclick="closePopup()">Close</div>
+        <h2>Free Access Window</h2>
+        <p>Community onboarding is currently open.</p>
+        <p><strong>Session expires in:</strong></p>
+
+        <div class="timer" id="time">40</div>
+
+        <a class="btn" href="https://t.me/joinchat/r3i8oXH_xcJkYWZl" target="_blank">
+            Join Community
+        </a>
+
+        <div class="continue">Continue</div>
     </div>
 </div>
 
 <script>
+/* Timer 40 seconds */
 let timeLeft = 40;
-setInterval(()=>{
-    if(timeLeft>0){
-        timeLeft--;
-        document.getElementById("seconds").textContent=timeLeft;
+const timerEl = document.getElementById("time");
+
+const countdown = setInterval(()=>{
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+
+    if(timeLeft <= 0){
+        clearInterval(countdown);
+        timerEl.textContent = "Expired";
     }
 },1000);
 
+/* Popup after 2 seconds */
 setTimeout(()=>{
     document.getElementById("popup").style.display="flex";
 },2000);
-
-function closePopup(){
-    document.getElementById("popup").style.display="none";
-}
 </script>
 
 </body>
