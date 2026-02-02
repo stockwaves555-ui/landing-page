@@ -7,114 +7,183 @@
 
 <style>
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#061a2e,#020b18);
-    height:100vh;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#0a1a2f,#061225);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
 }
 
-/* Popup overlay */
-.popup{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.6);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
+.container{
+  background:#fff;
+  max-width:720px;
+  width:100%;
+  border-radius:20px;
+  padding:40px 25px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Popup card */
-.popup-box{
-    background:#fff;
-    width:90%;
-    max-width:340px;
-    border-radius:18px;
-    padding:25px 20px;
-    text-align:center;
-    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+h1{
+  color:#0a66c2;
+  margin-bottom:10px;
 }
 
-/* Title */
-.popup-box h2{
-    color:#1976d2;
-    margin:0 0 10px;
+.sub{
+  color:#444;
+  font-size:1rem;
+  margin-bottom:20px;
 }
 
-/* Text */
-.popup-box p{
-    color:#444;
-    font-size:0.95rem;
-    margin:6px 0;
+.points{
+  margin:20px 0;
+  font-size:0.95rem;
+  color:#333;
 }
 
-/* Timer */
-.timer{
-    margin:15px 0;
-    font-size:1.6rem;
-    font-weight:bold;
-    color:#000;
-}
-
-/* Button */
 .btn{
-    display:block;
-    background:#22c55e;
-    color:#000;
-    font-weight:bold;
-    padding:16px;
-    border-radius:12px;
-    text-decoration:none;
-    margin-top:10px;
-    font-size:1.1rem;
+  display:inline-block;
+  background:#22c55e;
+  color:#000;
+  font-weight:bold;
+  padding:18px 35px;
+  border-radius:14px;
+  text-decoration:none;
+  font-size:1.2rem;
 }
 
-/* Continue text */
+.micro{
+  margin-top:8px;
+  font-size:0.85rem;
+  color:#666;
+}
+
+.disclaimer{
+  margin-top:25px;
+  font-size:0.8rem;
+  color:#555;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup-box{
+  background:#fff;
+  width:90%;
+  max-width:340px;
+  border-radius:20px;
+  padding:25px 20px;
+  text-align:center;
+}
+
+.popup-box h2{
+  color:#0a66c2;
+  margin-bottom:8px;
+}
+
+.popup-box p{
+  font-size:0.9rem;
+  color:#444;
+}
+
+.timer{
+  font-size:1.8rem;
+  font-weight:bold;
+  margin:12px 0;
+  color:#000;
+}
+
+.join-btn{
+  display:block;
+  background:#22c55e;
+  padding:16px;
+  border-radius:14px;
+  color:#000;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:1.1rem;
+}
+
 .continue{
-    margin-top:10px;
-    color:#777;
-    font-size:0.9rem;
+  margin-top:10px;
+  font-size:0.85rem;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Popup -->
+<div class="container">
+  <h1>Trading Learning Community 📊</h1>
+  <div class="sub">
+    Market education • Risk awareness • Community learning
+  </div>
+
+  <div class="points">
+    ✔ Learn basics of <strong>Nifty, Sensex & Bank Nifty</strong><br>
+    ✔ Understand market structure & price movement<br>
+    ✔ Educational discussions & community learning
+  </div>
+
+  <a class="btn" href="https://t.me/+r3i8oXH_xcJkYWZl" target="_blank">
+    Join Free Community
+  </a>
+
+  <div class="micro">
+    Free access • No spam • Leave anytime
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ Educational purpose only.<br>
+    No trading or investment advice.<br>
+    Market participation involves risk.
+  </div>
+</div>
+
+<!-- POPUP -->
 <div class="popup" id="popup">
-    <div class="popup-box">
-        <h2>Free Access Window</h2>
-        <p>Community onboarding is currently open.</p>
-        <p><strong>Session expires in:</strong></p>
+  <div class="popup-box">
+    <h2>Free Access Window</h2>
+    <p>Community onboarding for<br>
+      <strong>Nifty • Sensex • Bank Nifty</strong>
+    </p>
 
-        <div class="timer" id="time">40</div>
+    <p><strong>Session expires in:</strong></p>
+    <div class="timer" id="popupTimer">40</div>
 
-        <a class="btn" href="https://t.me/joinchat/r3i8oXH_xcJkYWZl" target="_blank">
-            Join Community
-        </a>
+    <a class="join-btn" href="https://t.me/+r3i8oXH_xcJkYWZl" target="_blank">
+      Join Community
+    </a>
 
-        <div class="continue">Continue</div>
-    </div>
+    <div class="continue">Continue</div>
+  </div>
 </div>
 
 <script>
-/* Timer 40 seconds */
-let timeLeft = 40;
-const timerEl = document.getElementById("time");
+let time = 40;
+const timerEl = document.getElementById("popupTimer");
 
-const countdown = setInterval(()=>{
-    timeLeft--;
-    timerEl.textContent = timeLeft;
-
-    if(timeLeft <= 0){
-        clearInterval(countdown);
-        timerEl.textContent = "Expired";
-    }
+setInterval(()=>{
+  if(time>0){
+    time--;
+    timerEl.innerText = time;
+  }
 },1000);
 
-/* Popup after 2 seconds */
 setTimeout(()=>{
-    document.getElementById("popup").style.display="flex";
+  document.getElementById("popup").style.display="flex";
 },2000);
 </script>
 
