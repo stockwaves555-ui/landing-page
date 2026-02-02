@@ -2,266 +2,116 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>StockWaves - SEBI Registered Research Analyst</title>
+<title>Trading Learning Community</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Speed Optimization -->
-<link rel="preconnect" href="https://img.icons8.com">
-
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 15px;
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#0a66c2,#020617);
+  color:#fff;
+  text-align:center;
+  padding:40px 15px;
+}
+h1{font-size:26px;margin-bottom:10px;}
+p{font-size:15px;opacity:.9}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 26px;
+  background:#22c55e;
+  color:#000;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:8px;
 }
 
-/* Floating circles */
-.circle {
-    position: absolute;
-    border-radius: 50%;
-    background: #ffffff;
-    opacity: 0.15;
-    animation: float 30s linear infinite;
+/* POPUP */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
-@keyframes float {
-    0% { transform: translateY(100vh); }
-    100% { transform: translateY(-100vh); }
+.popup{
+  background:#fff;
+  color:#000;
+  padding:22px;
+  width:90%;
+  max-width:360px;
+  border-radius:12px;
 }
-
-/* Main container */
-.container {
-    text-align: center;
-    padding: 40px 25px;
-    border-radius: 18px;
-    background: #ffffff;
-    max-width: 720px;
-    width: 100%;
-    color: #000;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-    position: relative;
-    z-index: 2;
+.popup h2{
+  color:#0a66c2;
+  font-size:20px;
 }
-
-/* Logo */
-.logo {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #0072ff;
+.timer{
+  font-size:18px;
+  font-weight:bold;
+  margin:10px 0;
 }
-
-/* Headings */
-h2 {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    margin: 12px 0 15px;
+.close{
+  margin-top:10px;
+  font-size:13px;
+  color:#666;
+  cursor:pointer;
 }
-
-.sebi-info {
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-/* Button */
-.btn {
-    background: #00c6ff;
-    color: #00334d;
-    font-weight: bold;
-    padding: 18px 35px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 1.4rem;
-    display: inline-block;
-    margin: 15px 0 5px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-
-/* Micro trust */
-.micro {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Timer */
-.timer {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ff9800;
-    font-size: 1rem;
-}
-
-/* Features */
-.features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-.feature-item {
-    margin: 10px;
-    font-weight: bold;
-}
-.feature-item img {
-    width: 40px;
-}
-
-/* Info box */
-.info-box {
-    background:#f5faff;
-    padding:15px;
-    border-radius:10px;
-    margin-top:20px;
-    font-size:0.95rem;
-}
-
-/* Disclaimer */
-.disclaimer {
-    font-size: 0.85rem;
-    margin-top: 22px;
-    color: #333;
-}
-
-/* Popup */
-.popup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-.popup-box {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 14px;
-    text-align: center;
-    max-width: 300px;
-}
-.popup-box h3,
-.popup-box p {
-    color: #000;
-}
-.popup-box a {
-    display: block;
-    margin-top: 12px;
-    background: #00c6ff;
-    padding: 14px;
-    border-radius: 10px;
-    color: #00334d;
-    font-weight: bold;
-    text-decoration: none;
-}
-.close {
-    margin-top: 10px;
-    cursor: pointer;
-    color: #555;
+small{
+  display:block;
+  margin-top:12px;
+  font-size:11px;
+  color:#cbd5e1;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Floating elements -->
-<div class="circle" style="width:90px;height:90px;left:10%;animation-duration:28s;"></div>
-<div class="circle" style="width:60px;height:60px;left:55%;animation-duration:24s;"></div>
-<div class="circle" style="width:110px;height:110px;left:80%;animation-duration:32s;"></div>
+<h1>Trading Learning Community 📊</h1>
+<p>Market education • Risk awareness • Community learning</p>
 
-<div class="container">
-    <div class="logo">📈 StockWaves</div>
+<a class="btn" href="https://t.me/+r3i8oXH_xcJkYWZl">Join Telegram</a>
 
-    <h2>
-        SEBI Registered Research Analyst<br>
-        Providing <strong>10–15 Research Updates During Market Hours</strong><br>
-        Nifty | Bank Nifty | Stock Options<br>
-        <strong>Educational Purpose Only</strong>
-    </h2>
+<small>
+Educational purpose only. No investment advice.  
+Market risks apply.
+</small>
 
-    <div class="sebi-info">
-        👤 Research Analyst: Mr. Sandeep<br>
-        🏛️ SEBI Reg No: INH000013147
-    </div>
+<!-- POPUP -->
+<div class="overlay" id="popup">
+  <div class="popup">
+    <h2>Free Access Window</h2>
+    <p>Community onboarding is currently open.</p>
+    <p><b>Session expires in:</b></p>
 
-    <!-- Social Proof -->
-    <div style="margin:18px 0;font-weight:bold;color:#0072ff;font-size:1.05rem;">
-        ⭐ Trusted by <strong>15,799+</strong> Indian Traders<br>
-        🔒 Free Telegram Research Community
-    </div>
+    <div class="timer" id="timer">05:00</div>
 
-    <!-- CTA -->
-    <a class="btn" href="https://t.me/joinchat/r3i8oXH_xcJkYWZl" target="_blank">
-        Join Free Telegram Channel
-    </a>
-    <div class="micro">No spam • Free forever • Leave anytime</div>
-
-    <!-- Timer -->
-    <div class="timer">
-        ⏳ Limited-time access ends in <span id="seconds">300</span>s
-    </div>
-
-    <!-- Features -->
-    <div class="features">
-        <div class="feature-item">
-            <img src="https://img.icons8.com/color/48/stock.png"><br>Nifty
-        </div>
-        <div class="feature-item">
-            <img src="https://img.icons8.com/color/48/bank-building.png"><br>Bank Nifty
-        </div>
-        <div class="feature-item">
-            <img src="https://img.icons8.com/color/48/price-tag.png"><br>Options
-        </div>
-    </div>
-
-    <!-- Who should join -->
-    <div class="info-box">
-        <strong>Who should join?</strong><br>
-        ✔ Working professionals & serious traders<br>
-        ✔ Beginners who want structured market learning<br>
-       ⚠️ Suitable for traders who understand market risk
-
-
-    </div>
-
-    <!-- Disclaimer -->
-    <div class="disclaimer">
-        ⚠️ <strong>Disclaimer:</strong><br>
-        This content is for educational purposes only.<br>
-        Registration with SEBI does not guarantee returns.<br>
-        Market investments are subject to risk.<br>
-        No guaranteed or assured profits.
-    </div>
-</div>
-
-<!-- Popup -->
-<div class="popup" id="popup">
-    <div class="popup-box">
-        <h3>Join 15,799+ Traders</h3>
-        <p>Free market research updates during live market hours</p>
-        <a href="https://t.me/joinchat/r3i8oXH_xcJkYWZl" target="_blank">Join Now</a>
-        <div class="close" onclick="closePopup()">Close</div>
-    </div>
+    <a class="btn" href="https://t.me/+r3i8oXH_xcJkYWZl">Join Community</a>
+    <div class="close" onclick="hidePopup()">Continue</div>
+  </div>
 </div>
 
 <script>
-let timeLeft = 300;
-setInterval(() => {
-    if (timeLeft > 0) {
-        timeLeft--;
-        document.getElementById("seconds").textContent = timeLeft;
-    }
-}, 1000);
+setTimeout(()=>{
+  document.getElementById("popup").style.display="flex";
+},3000);
 
-// Popup after 3 seconds
-setTimeout(() => {
-    document.getElementById("popup").style.display = "flex";
-}, 3000);
+let time=300;
+const t=document.getElementById("timer");
+setInterval(()=>{
+  let m=Math.floor(time/60);
+  let s=time%60;
+  t.innerHTML=`${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+  if(time>0) time--;
+},1000);
 
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
+function hidePopup(){
+  document.getElementById("popup").style.display="none";
 }
 </script>
 
